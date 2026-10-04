@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors Game</title>
+    <!-- This links to your CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        
+        <!-- 2010 Style Scoreboard -->
+        <div class="scoreboard">
+            <div class="score">
+                <h2>PLAYER</h2>
+                <span id="player-score">0</span>
+            </div>
+            <div class="score">
+                <h2>COMPUTER</h2>
+                <span id="computer-score">0</span>
+            </div>
+        </div>
+
+        <!-- Result Text -->
+        <h1 id="result-text">Choose your weapon!</h1>
+
+        <!-- The Battle Arena -->
+        <div class="arena">
+            <div class="hand-container">
+                <div id="player-hand" class="hand">✊</div>
+            </div>
+            <div class="hand-container">
+                <div id="computer-hand" class="hand">✊</div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <!-- 'playGame' calls a function in your JavaScript file -->
+            <button class="choice-btn" onclick="playGame('r')">Rock 🪨</button>
+            <button class="choice-btn" onclick="playGame('p')">Paper 📄</button>
+            <button class="choice-btn" onclick="playGame('s')">Scissors ✂️</button>
+        </div>
+
+    </div>
+    
+    <!-- This links to your JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

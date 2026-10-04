@@ -1,0 +1,133 @@
+/* Import fonts for the retro scoreboard and standard text */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap');
+
+body {
+    background-color: #e3fccd; /* Dark background */
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.game-container {
+    background: #000000;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(250, 231, 231, 0.5);
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+}
+
+/* 2010 Retro Scoreboard Styling */
+.scoreboard {
+    display: flex;
+    justify-content: space-around;
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 10px;
+    border: 3px solid #e94560;
+    margin-bottom: 20px;
+    font-family: 'Press Start 2P', cursive; /* 8-bit font */
+}
+
+.score h2 {
+    font-size: 14px;
+    margin-top: 0;
+    color: #e94560;
+}
+
+.score span {
+    font-size: 36px;
+    color: #32eaea;
+    text-shadow: 0 0 10px #00ffcc; /* Glowing green effect */
+}
+
+#result-text {
+    font-size: 24px;
+    margin: 20px 0;
+    min-height: 30px;
+    color: #ed2c2c;
+}
+
+/* Arena and Hands */
+.arena {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px 0;
+}
+
+.hand-container {
+    font-size: 80px;
+}
+
+.hand {
+    display: inline-block;
+}
+
+#computer-hand {
+    transform: scaleX(-1); /* Flips the computer hand to face the player */
+}
+
+/* Controls and Buttons */
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.choice-btn {
+    background-color: #f53232;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: bold;
+}
+
+.choice-btn:hover {
+    background-color: #2eb53e;
+    transform: translateY(-3px);
+}
+
+.choice-btn:active {
+    transform: translateY(2px);
+}
+
+/* This disables the buttons visually when the animation is running */
+.choice-btn:disabled {
+    background-color: #555;
+    color: #999;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Hand Shake Animations */
+@keyframes shakePlayer {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-20px) rotate(-10deg); }
+    50% { transform: translateY(0) rotate(0deg); }
+    75% { transform: translateY(-20px) rotate(-10deg); }
+}
+
+@keyframes shakeComputer {
+    0%, 100% { transform: translateY(0) scaleX(-1) rotate(0deg); }
+    25% { transform: translateY(-20px) scaleX(-1) rotate(10deg); }
+    50% { transform: translateY(0) scaleX(-1) rotate(0deg); }
+    75% { transform: translateY(-20px) scaleX(-1) rotate(10deg); }
+}
+
+.shake-player {
+    animation: shakePlayer 1s ease;
+}
+
+.shake-computer {
+    animation: shakeComputer 1s ease;
+}
